@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/presentation/screens/home/home_screens.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
-
+//aleida
 void main() {
   runApp(const MainApp());
 }
@@ -14,14 +15,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //aca colcoaremos un numero de 0 a 8 por que este es el tamaño de nuestra lista de colores
       theme: AppTheme(selectedColor: 0).getTheme(),
-      home:  Scaffold(
-        body: Center(
-          child: FilledButton(
-            onPressed: (){},
-            child: const Text("Boton Hola")
-          )
-        ),
-      ),
+      home:  const HomeScreen()
     );
   }
 }
