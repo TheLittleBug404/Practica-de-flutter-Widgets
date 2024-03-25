@@ -25,6 +25,10 @@ class AppTheme {
   //hacemos un get para poder obtener nuestro tema de colores esto lo llamaremos en el main
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,
-    colorSchemeSeed: colorList[selectedColor]
+    colorSchemeSeed: colorList[selectedColor],
+    //esto sera la  configuracion de todos nuestro AppBar
+    appBarTheme: const AppBarTheme(
+      centerTitle: false,
+    )
   );
 }
