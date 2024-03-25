@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+
+class MenuItem{
+  final String title;
+  final String subTitle;
+  final String link;
+  final IconData icon;
+
+  //nos creamos el constructor todos nuestras variables seran requeridas ninguno es opcional
+  //este constructor sera de manera constante ya que 
+  const MenuItem({
+    required this.title,
+    required this.subTitle,
+    required this.link,
+    required this.icon
+  });
+}
+//aca nos crearemos las diferentes opciones del Menu
+const appMenuItems = <MenuItem>[
+  MenuItem(
+    title: "Botones", 
+    subTitle: "Varios botones en flutter", 
+    link: "/buttons", 
+    icon: Icons.smart_button_outlined
+  ),
+  MenuItem(
+    title: 'Tarjetas', 
+    subTitle: 'Un contenedor estilizado', 
+    link: '/card', 
+    icon: Icons.credit_card
+  )
+];
