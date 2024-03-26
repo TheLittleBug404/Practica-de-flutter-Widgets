@@ -46,9 +46,10 @@ class _ControlerProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(//stream builder es algo que se va a construir en tiempo de ejecucion
-      stream: Stream.periodic(const Duration(milliseconds: 200),(value){
+      stream: Stream.periodic(const Duration(milliseconds: 200),(value){//esto se va construir en un tiempode 200 milisegundos
         return (value*2)/100;
-      }).takeWhile((value) => value<100),
+      })
+        .takeWhile((value) => value<100),//gracias a este podemos colocarle como
       builder: (context,snapshot){
         final progressValue = snapshot.data ?? 0;
         return  Padding(

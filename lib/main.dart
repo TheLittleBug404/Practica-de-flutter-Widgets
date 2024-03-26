@@ -12,6 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       //aca colcoaremos un numero de 0 a 8 por que este es el tamaño de nuestra lista de colores
