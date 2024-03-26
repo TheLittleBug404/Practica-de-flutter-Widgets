@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       //aca colcoaremos un numero de 0 a 8 por que este es el tamaño de nuestra lista de colores
-      theme: AppTheme(selectedColor: 1).getTheme(),
+      theme: AppTheme(selectedColor: 0).getTheme(),
     );
   }
 }
