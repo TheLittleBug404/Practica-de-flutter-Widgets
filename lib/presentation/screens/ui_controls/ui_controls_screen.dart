@@ -6,6 +6,7 @@ class UiControlsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlue.shade50,
         appBar: AppBar(title: const Text('UI Controls')),
         body: const _UiControlsView());
   }
@@ -37,7 +38,7 @@ class _UiControlsViewState extends State<_UiControlsView> {
       children: [
         SwitchListTile(
             title: const Text('Developer Mode'),
-            subtitle: const Text('Controles adicionales'),
+            subtitle: const Text('Controles adicionales',style:TextStyle(color: Colors.black38)),
             value: isDeveloper, //este es el que cambia el valor del switch
             onChanged: (value) {
               //value es el valor del switch que nos servira para poder implementar nuestra logica

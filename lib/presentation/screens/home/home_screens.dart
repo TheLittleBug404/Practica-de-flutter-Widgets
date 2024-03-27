@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orangeAccent.shade100,
         title: const Text('Flutter + Material 3'),
         centerTitle: false,
       ),

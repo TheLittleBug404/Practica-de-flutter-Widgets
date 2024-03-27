@@ -53,4 +53,10 @@ const appMenuItems = <MenuItem>[
     link: '/ui-controls', 
     icon: Icons.contact_mail_rounded
   ),
+  MenuItem(
+    title: 'Tutorial', 
+    subTitle: 'Introduccion a la aplicacion', 
+    link: '/tutorial', 
+    icon: Icons.tune_rounded
+  ),
 ];
