@@ -47,4 +47,10 @@ const appMenuItems = <MenuItem>[
     link: '/animated', 
     icon: Icons.android_outlined
   ),
+  MenuItem(
+    title: 'UI controls + tiles', 
+    subTitle: 'Aca vemos CheckBox y RadioButtons', 
+    link: '/ui-controls', 
+    icon: Icons.contact_mail_rounded
+  ),
 ];
