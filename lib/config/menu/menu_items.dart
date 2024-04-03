@@ -18,6 +18,12 @@ class MenuItem{
 //aca nos crearemos las diferentes opciones del Menu
 const appMenuItems = <MenuItem>[
   MenuItem(
+    title: 'Contador RiverPod', 
+    subTitle: 'Introduccion a RiverPod', 
+    link: '/counter', 
+    icon: Icons.add
+  ),
+  MenuItem(
     title: "Botones", 
     subTitle: "Varios botones en flutter", 
     link: "/buttons", 
@@ -59,4 +65,16 @@ const appMenuItems = <MenuItem>[
     link: '/tutorial', 
     icon: Icons.tune_rounded
   ),
+  MenuItem(
+    title: 'InifiniteScroll y pull', 
+    subTitle: 'Listas infinitas y pull to refresh', 
+    link: '/infinite', 
+    icon: Icons.backup_outlined
+  ),
+  MenuItem(
+    title: 'Cambio de temas', 
+    subTitle: 'En aca podremos cambiar el tema de nuestra aplicacion', 
+    link: '/theme', 
+    icon: Icons.theater_comedy_outlined
+  )
 ];

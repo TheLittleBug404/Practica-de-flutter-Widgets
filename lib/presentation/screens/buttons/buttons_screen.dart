@@ -7,9 +7,12 @@ class ButtonsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorTheme = Theme.of(context).colorScheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Buttons Scren'),
+        title: Text('Buttons Scren',style: textTheme.bodyMedium),
+        backgroundColor: colorTheme.primary
       ),
       body: const _ButtonsView(),
       floatingActionButton: FloatingActionButton(

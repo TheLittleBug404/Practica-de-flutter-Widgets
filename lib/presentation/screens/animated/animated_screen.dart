@@ -26,9 +26,12 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorTheme = Theme.of(context).colorScheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Container')
+        title: Text('Animated Container',style: textTheme.bodyMedium),
+        backgroundColor: colorTheme.primary,
       ),
       body: Center(
         child: AnimatedContainer(

@@ -5,9 +5,12 @@ class ProgressScreen extends StatelessWidget {
   const ProgressScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorTheme = Theme.of(context).colorScheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Progress Indicator"),
+        title: Text("Progress Indicator", style: textTheme.bodyMedium),
+        backgroundColor: colorTheme.primary,
       ),
       body: const _ProgressView()
     );

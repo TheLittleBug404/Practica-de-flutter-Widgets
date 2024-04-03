@@ -16,9 +16,12 @@ class CardsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorTheme = Theme.of(context).colorScheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cards Screen')
+        title: Text('Cards Screen',style: textTheme.bodyMedium),
+        backgroundColor: colorTheme.primary
       ),
       body: const _CardsView()
     );
@@ -197,7 +200,7 @@ class _CardType4 extends StatelessWidget {
           Image.network(
             'https://cdn-images-1.medium.com/v2/resize:fit:1024/0*vowtRZE_wvyVA7CB',
             height: 200,
-            width: 600,
+            width: double.infinity,
             fit:BoxFit.cover//con este se adapta al tamaño de las dimensiones del padre
           ),
           Align(//este alig nos lo llevara los iconos a la parte derecha

@@ -5,9 +5,14 @@ class UiControlsScreen extends StatelessWidget {
   const UiControlsScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorTheme = Theme.of(context).colorScheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
-        appBar: AppBar(title: const Text('UI Controls')),
+        appBar: AppBar(
+          title: Text('UI Controls',style: textTheme.bodyMedium),
+          backgroundColor: colorTheme.primary
+        ),
         body: const _UiControlsView());
   }
 }
