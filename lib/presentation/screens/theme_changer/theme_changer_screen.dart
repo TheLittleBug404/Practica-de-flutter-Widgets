@@ -10,7 +10,9 @@ class ThemeChangerScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ColorScheme colorTheme = Theme.of(context).colorScheme;
     TextTheme textTheme = Theme.of(context).textTheme;
-    final bool clickThemeDark = ref.watch(themeProviderDark);
+    //estaremos pendientes del theme notifier Provider
+    //con el .isDarkMode ya tenemos el valor de antes
+    final clickThemeDark = ref.watch(themeNotifierProvider).isDarkmode;
     return Scaffold(
       appBar: AppBar(
         title: Text('Themes',style: textTheme.bodyLarge,),
@@ -22,8 +24,9 @@ class ThemeChangerScreen extends ConsumerWidget {
               : Icons.light_mode_outlined
             ),
             onPressed: (){
-              ref.read(themeProviderDark.notifier).update((state) => !state);
-              ref.read(selectedBrightnessTheme.notifier).update((state) => !state);
+              //ref.read(themeProviderDark.notifier).update((state) => !state);
+              //ref.read(selectedBrightnessTheme.notifier).update((state) => !state);
+              ref.read(themeNotifierProvider.notifier).toogleDarkMode();//toogleDarkMode es el metodo del ThemeNotifier
             }, 
           )
         ],
@@ -39,7 +42,7 @@ class _ThemeChangerView extends ConsumerWidget {
   @override
   Widget build(BuildContext contex, WidgetRef ref) {
     final List<Color> colors = ref.watch(colorListProvider);
-    final selectedColor = ref.watch(selectedIndexColorProvider);
+    final selectedColor = ref.watch(themeNotifierProvider).selectedColor;
     return ListView.builder(
       itemCount: colors.length,
       itemBuilder: ((context, index) {
@@ -54,7 +57,8 @@ class _ThemeChangerView extends ConsumerWidget {
           value: index, 
           groupValue: selectedColor, 
           onChanged: (value){
-            ref.read(selectedIndexColorProvider.notifier).update((state) => index);
+            //ref.read(selectedIndexColorProvider.notifier).update((state) => index);
+            ref.read(themeNotifierProvider.notifier).changeColorIndex(index);
           }
         );
       })

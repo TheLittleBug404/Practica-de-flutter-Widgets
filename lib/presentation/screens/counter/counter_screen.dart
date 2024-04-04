@@ -12,7 +12,7 @@ class CounterScreen extends ConsumerWidget{
     //con el watch le decimos a mi aplicacion que este pendiente de nuestro Counter Provider
     final int clickCounter = ref.watch(counterProvider);
     //nos creamos un watch para que este pendiente de nuestra variable
-    final bool clickThemeDark = ref.watch(themeProviderDark);
+    final bool clickThemeDark = ref.watch(themeNotifierProvider).isDarkmode;
     ColorScheme colorTheme = Theme.of(context).colorScheme;
     TextTheme textTheme = Theme.of(context).textTheme;
 
@@ -30,8 +30,9 @@ class CounterScreen extends ConsumerWidget{
               : Icons.light_mode_outlined
             ),
             onPressed: (){
-              ref.read(themeProviderDark.notifier).update((state) => !state);
-              ref.read(selectedBrightnessTheme.notifier).update((state) => !state);
+              //ref.read(themeProviderDark.notifier).update((state) => !state);
+              //ref.read(selectedBrightnessTheme.notifier).update((state) => !state);
+              ref.read(themeNotifierProvider.notifier).toogleDarkMode();
             }
           )
         ],

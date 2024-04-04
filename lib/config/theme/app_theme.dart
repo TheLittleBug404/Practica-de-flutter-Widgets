@@ -34,4 +34,17 @@ class AppTheme {
       centerTitle: false,
     )
   );
+
+  //metodo que regresa una nueva instancia de la appTheme 
+  AppTheme copyWith({
+    //recibiremos las propiedades o sea lo mismo que le pedimos en el constructor
+    //con la diferencia de que estos sean de tip opcional ?
+    int? selectedColorNI,
+    bool? isDarkmodeNI
+  }) => AppTheme(
+    //mandaremos estos datos a nuestra nueva instancia pero con la diferencia de que si no tenemos el dato mandaremos el dato 
+    //de la clase original
+    selectedColor: selectedColorNI ?? selectedColor,
+    isDarkmode: isDarkmodeNI ?? isDarkmode
+  );
 }

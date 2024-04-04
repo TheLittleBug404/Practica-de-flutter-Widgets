@@ -26,14 +26,18 @@ class MainApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context,WidgetRef ref) {
-    final int colorSeleccionado = ref.watch(selectedIndexColorProvider);
-    final bool selectedBrightness = ref.watch(selectedBrightnessTheme);
+    //final int colorSeleccionado = ref.watch(selectedIndexColorProvider);
+    //final bool selectedBrightness = ref.watch(selectedBrightnessTheme);
+    //ahora colocaremos nuestro provider para que podamos manejar nuestro AppTheme
+    final AppTheme appThemeAhora = ref.watch(themeNotifierProvider);
     return MaterialApp.router(
       title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      //aca colcoaremos un numero de 0 a 8 por que este es el tamaño de nuestra lista de colores
-      theme: AppTheme(selectedColor: colorSeleccionado,isDarkmode: selectedBrightness).getTheme(),
+      //como ya usamos nuestro Statenotifier para la clase appTheme ya no es necesario la sisguiente linea de codigo
+      //theme: AppTheme(selectedColor: colorSeleccionado,isDarkmode: selectedBrightness).getTheme(),
+      //usaremos el getTheme por que como ya sabemos nosotros ya podemos usar nuestros metodos de nuestro AppTheme
+      theme:appThemeAhora.getTheme()
     );
   }
 }
